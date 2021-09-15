@@ -4,7 +4,7 @@ This file contains the code for implementing ADT first=in first-out (queue) clas
     PriorityQueue
 I am going to use regular python list for the implementation of these queues.
 """
-from typing import Callable, List
+from typing import Callable
 
 
 class Queue:
@@ -26,6 +26,12 @@ class Queue:
         Initialize the attributes of this queue
         """
         self._container = []
+
+    def __str__(self):
+        """
+        String Representation of this Queue
+        """
+        return " -> ".join([str(item) for item in self._container])
 
     def is_empty(self) -> bool:
         """
@@ -85,6 +91,47 @@ class Queue:
         0
         """
         return self._container.pop()
+
+
+class PriorityQueue(Queue):
+    """
+    This is child class of Queue. The only difference is that new Items
+    is added to the queue with priority consideration.
+    """
+
+    def __init__(self, priority: Callable[['object', 'object'], bool]):
+        """
+        Constractor method
+        """
+        Queue.__init__(self)
+        self.priority = priority
+
+    def enqueue(self, item: 'object') -> None:
+        """
+        Add item to the queue  using the given priority consideration
+
+        >>> def is_greater(item1, item2):
+        ...     return item1 >= item2
+        >>> pq = PriorityQueue(is_greater)
+        >>> pq.enqueue(27)
+        >>> pq.enqueue(18)
+        >>> pq.enqueue(100)
+        >>> str(pq)
+        '18 -> 27 -> 100'
+        >>> items = [3, 2, 6, 18, 27, 50, 200]
+        >>> for digit in items: pq.enqueue(digit)
+        >>> str(pq)
+        '2 -> 3 -> 6 -> 18 -> 18 -> 27 -> 27 -> 50 -> 100 -> 200'
+        """
+        if self.is_empty():
+            self._container.append(item)
+        else:
+            index = 0
+            for i in range(len(self._container)):
+                if self.priority(item, self._container[i]):
+                    index = i+1
+            self._container.insert(index, item)
+
 
 
 if __name__ == "__main__":
