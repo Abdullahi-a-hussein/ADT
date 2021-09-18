@@ -10,6 +10,6 @@ This repo contains implementation of various Abstract Data types.  The language 
       <li> Pull method </li>
       <p> This removes and prints the top most item of the stack </p>
    </ul>
-   This file also contains a **GuardedStack** child class of <bold Stack> where new stack elements is added to the stack if they pass the guard.
+   This file also contains a <b>GuardedStack</b> child class of <b> stack </b> where new stack elements is added to the stack if they pass the guard.
    </p>
 </ul>
