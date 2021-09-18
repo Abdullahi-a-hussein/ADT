@@ -247,6 +247,38 @@ class LinkedList:
                 prev, current = current, current.next
             prev.next = link._first
 
+    def remove(self, item: 'objec') -> None:
+        """
+        Remove the first occurance of <item> from this linked list.
+        If <item> not in the list, raise ValueError
+        >>> link = LinkedList([3, 10, 39, 2, 50])
+        >>> str(link)
+        '3 -> 10 -> 39 -> 2 -> 50'
+        >>> link.remove(2)
+        >>> str(link)
+        '3 -> 10 -> 39 -> 50'
+        >>> link.remove(3)
+        >>> str(link)
+        '10 -> 39 -> 50'
+        >>> link.remove(50)
+        >>> str(link)
+        '10 -> 39'
+        """
+        # when item is not in this linkedlist
+        if not (item in self):
+            raise ValueError
+        # When item is the first element of this linked list
+        elif self._first.item == item:
+            self._first = self._first.next
+        # When item is not the first item of this list but item is in the list
+        else:
+            prev, current = None, self._first
+            while current.item != item:
+                prev, current = current, current.next
+            prev.next = current.next
+
+
+
 
 if __name__ == "__main__":
     import doctest
