@@ -235,11 +235,17 @@ class LinkedList:
         """
         >>> link1 = LinkedList([1, 2, 3, 5, 5, 6, 334, 234])
         >>> link2 = LinkedList(["hello", "New Line", "old line"])
-        >>>
+        >>> link1.extend(link2)
+        >>> str(link1)
+        '1 -> 2 -> 3 -> 5 -> 5 -> 6 -> 334 -> 234 -> hello -> New Line -> old line'
         """
-
-
-
+        if not self._first:
+            self._first = link._first
+        else:
+            prev, current = self._first, self._first
+            while current:
+                prev, current = current, current.next
+            prev.next = link._first
 
 
 if __name__ == "__main__":
