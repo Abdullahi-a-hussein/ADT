@@ -16,6 +16,9 @@ This repo contains implementation of various Abstract Data types.  The language 
     <p> This file contains implementation code for <b>FIFO</b> ADT with the following basic methods. </p>
     <ul>
    <li>enqueue </li>
-   <p> This addes new items at the end of the queue
+   <p> This addes new items at the end of the queue </p>
+   <li>dequeue </li>
+   This removes and returns the first item that was added to the queue out of the remaining items in the queue. 
    </ul>
+   This file also contains a child class <b> PriorityQueue</b>, of the Queue class. The only difference is how items are added to the queue. PriorityQueue addes items to the queue using the give priority instructions. Just like, people with disability are given priority in a queue of people for some sort of services.
 </ul>
