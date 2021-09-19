@@ -36,7 +36,7 @@ This repo contains implementation of various Abstract Data types.  The language 
       <p>This returns the value stored at the provided index. </p>
       <li>setitem </li>
       <p> This changes the value stored at the given index to the new provided value. <p>
-      <li> contains <li>
+      <li> contains </li>
       <p> This checks wether the provided item is in this linked list and returns false if it is not and True if it is </p>
       <li> reverse </li>
       <p> This reverses the order of the elements in this linked list. The first elemetn in this linked list becomes the last element. </p>
