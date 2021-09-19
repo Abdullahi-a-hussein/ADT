@@ -21,7 +21,7 @@ This repo contains implementation of various Abstract Data types.  The language 
    This removes and returns the first item that was added to the queue out of the remaining items in the queue. 
    </ul>
    This file also contains a child class <b> PriorityQueue</b>, of the Queue class. The only difference is how items are added to the queue. PriorityQueue addes     items to the queue using the give priority instructions. Just like, people with disability are given priority in a queue of people for some sort of services.
-  <li><a href="https://github.com/Abdullahi-a-hussein/ADT/blob/master/Linkedlist/linkedlist.py">Linked list</a> </li>
+  <li> <h2><a href="https://github.com/Abdullahi-a-hussein/ADT/blob/master/Linkedlist/linkedlist.py">Linked list</a> </h2></li>
   <p> This file contains implementation code for ADT singly linked list. The class <b>_node</b> is used to constract an item in this linked list. Any element of this linked list is either none, or it has tow elements: an item that holds the value of this node and a pointer that point towards the next item of the list.</p>
   
   <p> The follwing are some of the methods of this class:
