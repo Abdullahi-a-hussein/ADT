@@ -278,6 +278,35 @@ class LinkedList:
             prev.next = current.next
 
 
+    def insert(self, index: int, value: 'object') -> None:
+        """
+        insert the  given item at the given index in this linked list
+
+        >>> link = LinkedList([3, 10, 39, 2, 50])
+        >>> str(link)
+        '3 -> 10 -> 39 -> 2 -> 50'
+        >>> link.insert(1, 100)
+        >>> str(link)
+        '3 -> 100 -> 10 -> 39 -> 2 -> 50'
+        """
+        if not self._first:
+            self._first = _Node(value)
+        else:
+            new_node = _Node(value)
+            curr_node = self._first
+            if index == 0:
+                new_node.next = curr_node
+                self._first = new_node
+            elif len(self) <= index:
+                while curr_node.next:
+                    curr_node = curr_node.next
+                curr_node.next = new_node
+            else:
+                count, prev = 0, None
+                while count < index:
+                    prev, curr_node = curr_node, curr_node.next
+                    count += 1
+                prev.next,new_node.next = new_node, curr_node
 
 
 if __name__ == "__main__":
