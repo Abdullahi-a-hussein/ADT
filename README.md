@@ -46,7 +46,7 @@ This repo contains implementation of various Abstract Data types.  The language 
       <p> This method removes and returns the last item of this linked list.</p>
       <li> extend </li>
       <p> This concatinates the given linked list to this linked list to form single linked list.</p>
-      <li> Remove <li>
+      <li> Remove </li>
       <p> Removes the first occurance of the provided item. It raises IndexError if Item is not in this linked list.</p>
    </ul>
 </ul>
