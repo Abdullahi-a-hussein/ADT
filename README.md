@@ -30,7 +30,7 @@ This repo contains implementation of various Abstract Data types.  The language 
       <p> This addes new item at the end of the linked list </p>
       <li> insert </li>
       <p> This inserts the given item at the specified position of this linked list.</p>
-      <li> len <li>
+      <li> len </li>
       <p> This returns the number of items in this linked list. </p>
       <li> getitem </li>
       <p>This returns the value stored at the provided index. </p>
