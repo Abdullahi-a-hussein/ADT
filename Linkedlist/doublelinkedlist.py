@@ -190,9 +190,6 @@ class DoubleLinkedList:
                 curr.next.prev = prev
 
 
-
-
-
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
