@@ -49,4 +49,5 @@ This repo contains implementation of various Abstract Data types.  The language 
       <li> Remove </li>
       <p> Removes the first occurance of the provided item. It raises IndexError if Item is not in this linked list.</p>
    </ul>
+   <li><h2><a href="https://github.com/Abdullahi-a-hussein/ADT/blob/master/Linkedlist/doublelinkedlist.py">Doubly Linked List </a></h2></li>
 </ul>
