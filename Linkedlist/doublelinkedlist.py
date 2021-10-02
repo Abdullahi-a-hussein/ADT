@@ -189,6 +189,71 @@ class DoubleLinkedList:
             if curr:
                 curr.next.prev = prev
 
+    def pop(self) -> 'object':
+        """
+        remove and return the last last element in this linked list
+
+         >>> obj1 = [1, 10, 2, 57, 23, 100, 83]
+        >>> obj2 = [50]
+        >>> obj3 = [34, 81]
+        >>> link1 = DoubleLinkedList(obj1)
+        >>> link2 = DoubleLinkedList(obj2)
+        >>> link3 = DoubleLinkedList(obj3)
+        >>> link4 = DoubleLinkedList([])
+        >>> link1.pop()
+        83
+        >>> link2.pop()
+        50
+        >>> str(link1)
+        '1 <-> 10 <-> 2 <-> 57 <-> 23 <-> 100'
+        >>> str(link2)
+        ''
+        """
+        if not self._first:
+            raise IndexError
+        elif len(self) == 1:
+            placeholder = self._first.data
+            self._first = None
+            return placeholder
+        else:
+            prev, curr, placeholder = None, self._first, self._first.next
+            while placeholder:
+                prev, curr, placeholder = curr, placeholder, placeholder.next
+            prev.next = placeholder
+            return curr.data
+
+    def append(self, item: 'object') -> None:
+        """
+        Append Item to this linked list
+        >>> obj1 = [1, 10, 2, 57, 23, 100, 83]
+        >>> obj2 = [50]
+        >>> obj3 = [34, 81]
+        >>> link1 = DoubleLinkedList(obj1)
+        >>> link2 = DoubleLinkedList(obj2)
+        >>> link3 = DoubleLinkedList(obj3)
+        >>> link4 = DoubleLinkedList([])
+        >>> link1.append(350)
+        >>> str(link1)
+        '1 <-> 10 <-> 2 <-> 57 <-> 23 <-> 100 <-> 83 <-> 350'
+        >>> link2.append(70)
+        >>> str(link2)
+        '50 <-> 70'
+        >>> link4.append(7)
+        >>> str(link4)
+        '7'
+        """
+        new_node = _DoubleNode(item)
+        if len(self) == 0:
+            self._first = new_node
+        else:
+            prev, curr = None, self._first
+            while curr:
+                nxt = curr.next
+                prev, curr = curr, nxt
+            prev.next = new_node
+            new_node.prev = prev
+
+
 
 if __name__ == "__main__":
     import doctest
