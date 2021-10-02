@@ -89,7 +89,7 @@ class DoubleLinkedList:
                 holder += " <-> " + str(curr.data)
         return holder
 
-#TODO: complete there rest of methods
+# TODO: complete there rest of methods
     def insert(self, index: int, value: 'object') -> None:
         """
         >>> obj1 = [1, 10, 2, 57, 23, 100, 83]
@@ -172,10 +172,10 @@ class DoubleLinkedList:
         >>> str(link3)
         '81'
         """
-        #when item not in least
+        # when item not in least
         if not (item in self):
             raise ValueError
-        #when Item is the first element of this list
+        # when Item is the first element of this list
         elif self._first.data == item:
             self._first = self._first.next
             if len(self) > 0:
@@ -252,7 +252,6 @@ class DoubleLinkedList:
                 prev, curr = curr, nxt
             prev.next = new_node
             new_node.prev = prev
-
 
 
 if __name__ == "__main__":
