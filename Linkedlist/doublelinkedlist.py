@@ -138,6 +138,7 @@ class DoubleLinkedList:
                 new_node.next = curr
                 curr.prev = new_node
 
+    #def remove(self, item:'object') -> None:
 
 
 if __name__ == "__main__":
