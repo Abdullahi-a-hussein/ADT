@@ -138,7 +138,59 @@ class DoubleLinkedList:
                 new_node.next = curr
                 curr.prev = new_node
 
-    #def remove(self, item:'object') -> None:
+    def __contains__(self, item):
+        """
+        Return if list contain <item>. Return False otherwise.
+        """
+        cur = self._first
+        while cur:
+            if cur.data == item:
+                return True
+            cur = cur.next
+        return False
+
+    def remove(self, item:'object') -> None:
+        """
+        Remove <item> from this linked list. Raise ValueError if Item not in list:
+        >>> obj1 = [1, 10, 2, 57, 23, 100, 83]
+        >>> obj2 = [50]
+        >>> obj3 = [34, 81]
+        >>> link1 = DoubleLinkedList(obj1)
+        >>> link2 = DoubleLinkedList(obj2)
+        >>> link3 = DoubleLinkedList(obj3)
+        >>> link4 = DoubleLinkedList([])
+        >>> link1.remove(57)
+        >>> str(link1)
+        '1 <-> 10 <-> 2 <-> 23 <-> 100 <-> 83'
+        >>> link2.remove(50)
+        >>> str(link2)
+        ''
+        >>> link2.remove(40)
+        Traceback (most recent call last):
+        ValueError
+        >>> link3.remove(34)
+        >>> str(link3)
+        '81'
+        """
+        #when item not in least
+        if not (item in self):
+            raise ValueError
+        #when Item is the first element of this list
+        elif self._first.data == item:
+            self._first = self._first.next
+            if len(self) > 0:
+                self._first.prev = None
+        else:
+            prev, curr = None, self._first
+            while curr.data != item:
+                nxt = curr.next
+                prev, curr = curr, nxt
+            prev.next = curr.next
+            if curr:
+                curr.next.prev = prev
+
+
+
 
 
 if __name__ == "__main__":
