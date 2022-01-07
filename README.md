@@ -50,4 +50,8 @@ This repo contains implementation of various Abstract Data types.  The language 
       <p> Removes the first occurance of the provided item. It raises IndexError if Item is not in this linked list.</p>
    </ul>
    <li><h2><a href="https://github.com/Abdullahi-a-hussein/ADT/blob/master/Linkedlist/doublelinkedlist.py">Doubly Linked List </a></h2></li>
+   <p> The major difference between singly linked list and doubly linked list is that every node in sigle linked list has only a head that points to the next node in the list whereas every node in a doubly linked list has both a head and a tail. One way of taking advantage of the added property is you can give the list a start node and end node. This enables you to transverse the list whichever way makes the task less time consuming and effecient. </p>
+      <ul>
+         <li>
+      </ul>
 </ul>
